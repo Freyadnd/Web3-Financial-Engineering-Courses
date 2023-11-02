@@ -129,8 +129,7 @@ contract liquidity_protocol
 
     function calBorrowedAndProfit() public view returns(uint)
     {
-        borrowed[user] + calProfitReal();
-
+        return borrowed[msg.sender] + calProfitReal(); // TODO: user → msg.sender
     }
 
     function calAllProfi() public view returns(uint) {
@@ -156,7 +155,7 @@ contract liquidity_protocol
 
     function calProfitReal()public view returns(uint)
     {
-        return calProfit()/10e18;
+        return calAllProfit()/10e18; // TODO: calProfit → calAllProfit
     }
     /*
     rate = allBorrowed/AllBalance (0 < rate <1);
@@ -196,7 +195,7 @@ contract liquidity_protocol
     
     */
 
-    function calUserBonus() {
+    function calUserBonus() public { // TODO: add visibility
 
     }
 

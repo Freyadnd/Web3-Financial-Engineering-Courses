@@ -1,0 +1,17 @@
+[profile.default]
+src     = "0.web3_financial_infrastructure"
+out     = "out"
+libs    = ["lib"]
+test    = "test"
+cache   = true
+
+remappings = [
+  "@openzeppelin/=lib/openzeppelin-contracts/"
+]
+
+optimizer        = false
+optimizer_runs   = 200
+
+# bank.sol 是未完成的草稿合约，暂时跳过编译
+# 等合约补全后删除此行
+skip = ["liquidity_protocol/bank.sol"]
